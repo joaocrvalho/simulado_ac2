@@ -1,0 +1,14 @@
+<h2>Lista de tarefas:</h2>
+<ul>
+    @for (tarefa of tarefas; track $index) {
+
+    <li [class] = "{'riscar': riscar, 'incompleto': !riscar}"> {{riscar ? "": ""}}
+    {{tarefa.nome}} {{tarefa.data}}
+    </li>
+    
+    <button (click)="riscar = !riscar">Concluir</button>
+    <button (click)="remover()">Remover</button>
+    }
+</ul>
+
+<a routerLink=""><button>Voltar</button></a>
